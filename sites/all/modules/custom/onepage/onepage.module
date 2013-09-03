@@ -1,0 +1,136 @@
+<?php
+
+// $Id$
+
+/**
+ * @file
+ * Provides custom tweaks for [SITENAME]
+ */
+
+function onepage_menu(){
+  $items['homepage'] = array(
+      'description' => 'One Page View for Daniel Reeve Portfolio',
+      'page callback' => 'onepage_menu_page',
+      'access callback' => TRUE,
+      'weight' => 30,
+    );
+    return $items;
+}
+
+function onepage_menu_page(){
+  $page = "";
+
+  $home_node = node_load(18);
+  $home = node_view($home_node, "full");
+
+  $batdan_node = node_load(26);
+  $batdan = node_view($batdan_node, "full");
+
+  $about_node = node_load(1);
+  $about = node_view($about_node, "full");
+
+  $timer = module_invoke('block', 'block_view', 3);
+  $timer = $timer['content'];
+
+  $timeline = get_timeline();
+
+  $about_us_icons_view = views_get_view('about_us_icons', 'block');
+  $about_us_icons_view = $about_us_icons_view->execute_display("block");
+  $about_us_icons = $about_us_icons_view['content'];
+
+  $skills_view = views_get_view("programs", "block_1");
+  $skills_view = $skills_view->execute_display("block_1");
+  $skills = "<h2><a name='skills'>" . $skills_view['subject'] . "</a></h2>";
+  $skills .= "<h3>IT'S NOT JUST ABOUT THE PROGRAMS</h3>";
+  $skills .= $skills_view['content'];
+
+  $portfolio_view = views_get_view("portfolio", "block_1");
+  $portfolio_view = $portfolio_view->execute_display("block_1");
+  $portfolio = "<h2><a name='portfolio'>" . $portfolio_view['subject'] . "</a></h2>";
+  $portfolio .= $portfolio_view['content'];
+
+  $contact_node = node_load(7);
+  $contact = node_view($contact_node, "full");
+
+  $page .= "<div class='onepage home-main'>" . drupal_render($batdan);
+  $page .= drupal_render($home). "</div>";
+
+  $page .= "<div class='onepage about'><h2><a name='about'>ABOUT</a></h2><div class='text'>" . drupal_render($about). "</div>";
+  $page .= "<div class='timer'>" . $timer . "</div>";
+  $page .= "<div class='icons'>" . $about_us_icons . "</div>";
+  $page .= "<div class='timeline'>" . $timeline . "</div>";
+  $page .= "</div>";
+  $page .= "<div class='onepage skills'>";
+  $page .= "<div class='onepage skills programs'>" . $skills . "</div></div>";
+  $page .= "<div class='onepage portfolio'>" . $portfolio . "</div>";
+  //$page .= "<h2><a name='contact'>CONTACT</a></h2><div class='onepage contact'>" . drupal_render($contact) . "</div>";
+
+  return $page;
+}
+
+
+/**
+ * Implements hook_block_info().
+ */
+function onepage_timeline_block_info() {
+  $blocks = array();
+  $blocks['timeline'] = array(
+    'info' => t('Block for About Timeline'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function onepage_timeline_block_view($delta='') {
+  $block = array();
+
+  switch($delta) {
+    case 'timeline':
+      $block['subject'] = t('Timeline');
+      $block['content'] = timeline_contents();
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Custom function to assemble renderable array for block content.
+ * Returns a renderable array with the block content.
+ * @return
+ *   returns a renderable array of block content.
+ */
+function get_timeline() {
+
+  $timeline_view_results = views_get_view_result('about_timeline', 'block');
+  $events = array();
+
+  foreach($timeline_view_results as $result){
+    $events[$result->field_field_timeline_percentage[0]['raw']['value']] = array();
+    $events[$result->field_field_timeline_percentage[0]['raw']['value']]['nid'] = $result->nid;
+    $events[$result->field_field_timeline_percentage[0]['raw']['value']]['percentage'] = $result->field_field_timeline_percentage[0]['raw']['value'];
+    $events[$result->field_field_timeline_percentage[0]['raw']['value']]['year'] = $result->field_field_event_name[0]['raw']['value'];
+    $events[$result->field_field_timeline_percentage[0]['raw']['value']]['name'] = $result->node_title;
+    $events[$result->field_field_timeline_percentage[0]['raw']['value']]['image'] = $result->field_field_event_icon[0]['raw'];
+  }
+
+  $text = "<div class='timeline-bg'>&nbsp;";
+  foreach($events as $percentage => $event){
+    if(($percentage !== 0) && ($percentage !== 100)){
+      $text .= "<div class='image dot event-".$events[$percentage]['percentage']." year-".$events[$percentage]['year']."'><img src='sites/all/themes/danreeve/css/i/dot.jpeg' class='sites/all/themes/danreeve/css/i/dot.jpeg'/></div>";
+      $text .= "<div class='timeline-text dot event-".$events[$percentage]['percentage']." year-".$events[$percentage]['year']."'><span class='year-text'>".$events[$percentage]['year']."</span><br/><span class='name-text'>".$events[$percentage]['name']."</span></div>";
+    } else {
+      $image ='<img src="'.image_style_url('timeline',$events[$percentage]['image']['uri']).'" class="'.image_style_url('timeline',$events[$percentage]['image']['uri']).'" />';
+      $text .= "<div class='image event-".$events[$percentage]['percentage']." year-".$events[$percentage]['year']."'>".$image."</div>";
+      $text .= "<div class='timeline-text event-".$events[$percentage]['percentage']." year-".$events[$percentage]['year']."'><span class='year-text'>".$events[$percentage]['year']."</span></div>";
+    }
+  }
+  $text .= "</div>";
+
+  return $text;
+}
+
+

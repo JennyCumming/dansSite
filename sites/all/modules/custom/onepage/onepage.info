@@ -1,0 +1,4 @@
+name = One Page Custom Module
+description = Custom module to create One Page
+core = 7.x
+package = Custom

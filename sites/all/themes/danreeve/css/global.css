@@ -1,0 +1,633 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+/* ====================
+    HTML tags
+   ==================== */
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+a:link,
+a:active,
+a:visited {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+p a {
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.about h2,
+.skills h2,
+.portfolio h2{
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  margin-bottom:30px;
+}
+
+
+/* HEADER MENU */
+.block-main-menu{
+  background:url('i/bg-slice.jpg') repeat-x top left;
+  height:88px;
+  text-align:center;
+}
+
+.block-main-menu ul.menu{
+  width:59%;
+  margin: 0 auto 0 auto;
+  padding-top:8px;
+}
+
+.block-main-menu .menu li.leaf{
+  color:#000000;
+  width:110px;
+  float:left;
+  padding:30px 0 30px 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.block-main-menu .menu li a{
+  color:#FFFFFF;
+  text-decoration: none;
+}
+
+.block-main-menu .menu li.home{
+  width:220px;
+  padding-top:18px;
+}
+
+.block-main-menu .menu li a.dan-logo{
+  background: url('i/img-logo.png') no-repeat left top;
+  display:block;
+  text-indent: -9999px;
+  width: 189px;
+  height: 121px;
+}
+
+/* ONE PAGE SETTINGS */
+
+body{
+  background: url('i/bg-texture.jpg') fixed repeat;
+}
+
+/* HOME PAGE */
+.onepage.home-main{
+margin: 0 auto;         /*align the header at the center*/
+text-align: center;
+}
+
+.onepage .home-dan{
+width: 960px;         /* width of each container*/
+height: 960px;          /* height of each container*/
+position: absolute;       /* instructure each container to obey the position absolutely*/
+float: left;          /* float all the container so that they overlapped each other*/
+/*left: 27%;     */       /* align them to the center of the screen */
+z-index: -1;
+}
+
+.onepage .home-dan .left{
+  width:486px;
+  height:960px;
+  clear:both;
+  float: left;
+  background: url('i/bg-texture.jpg') fixed repeat;
+}
+
+.onepage .home-dan .left .welcome-text .big-text{
+  font-size: 130px;
+font-weight: bold;
+width: 145px;
+float: left;
+letter-spacing: -11px;
+}
+
+.onepage .home-dan .left .welcome-text .medium-text{
+  font-size: 37px;
+font-weight: bold;
+padding-top: 40px;
+padding-left: 196px;
+width: 272px;
+display: block;
+}
+
+.onepage .home-dan .left .welcome-text .smaller-text{
+  font-size: 31px;
+font-weight: bold;
+padding-left: 199px;
+margin-top: -11px;
+width: 369px;
+display: block;
+}
+
+.onepage .home-dan .left .welcome-text .smaller-text .second{
+  width: 230px;
+display: block;
+float: left;
+}
+
+.onepage .home-dan .left .welcome-text .smaller-text .third{
+font-size: 72px;
+float: left;
+display: block;
+width: 45px;
+margin-top: -16px;
+}
+
+.onepage .home-dan .left .welcome-text .smaller-text .fourth{
+width: 147px;
+margin-top: 33px;
+position: absolute;
+margin-left: -273px;
+}
+
+.onepage .home-dan .left .body.smaller-text,
+.onepage .home-dan .left .identity{
+  clear:both;
+  width:330px;
+  font-size:12px;
+}
+
+.onepage .home-dan .left .body.smaller-text .bold,
+.onepage .home-dan .left .identity .bold{
+  font-weight:bold;
+}
+
+.onepage .home-dan .left .identity,
+.onepage .home-dan .left .button{
+  padding-top:20px;
+}
+
+.onepage .home-dan .left .button{
+  background: url('i/img-arrow.png') no-repeat right 20px;
+display: block;
+width: 315px;
+height: 103px;
+}
+
+.onepage .home-dan .left .button .button-text{
+background: url("i/btn-reveal-batdan.png") no-repeat top left;
+display: block;
+text-indent: -9999px;
+width: 249px;
+height: 47px;
+margin-top: 70px;
+}
+
+.onepage .home-dan .right{
+  width:474px;
+  height:960px;
+  float:right;
+  background: url('i/bg-texture.jpg') fixed repeat;
+}
+
+.onepage .home-dan .right .dan-image{
+  background: url('i/img-dan.png') no-repeat top left;
+  display:block;
+  height:606px;
+  width:521px;
+}
+
+/* BATDAN HOME */
+
+.batdan-bg{
+  background-color: black;
+  height:931px;
+  width:100%;
+  position: absolute;
+}
+
+.batdan-overlay{
+  background: url("i/img-batdan.png") repeat scroll 0% 0% transparent;
+  height: 116px;
+  width: 258px;
+  margin-left: -28px;
+}
+
+.home-batdan{
+  width: 960px;         /* width of each container*/
+height: 960px;          /* height of each container*/
+position: absolute;       /* instructure each container to obey the position absolutely*/
+float: left;          /* float all the container so that they overlapped each other*/
+/*left: 27%;*/            /* align them to the center of the screen */
+z-index: -1;
+background-color: black;
+}
+
+.home-batdan .left{
+  width:300px;
+  clear:both;
+}
+
+.home-batdan .button-keep{
+  width:250px;
+}
+
+.home-batdan .button-keep .button-text{
+  background: url("i/btn-hide-batdan.png") no-repeat top left;
+  display: block;
+  text-indent: -9999px;
+  width: 249px;
+  height: 47px;
+  margin-top: 70px;
+}
+
+.home-batdan .smaller-text{
+  font-size: 24px;
+  margin-top: -11px;
+  width: 369px;
+  color:#fed746;
+  display: block;
+  clear:both;
+  position: absolute;
+  height:66px;
+}
+
+.home-batdan .smaller-text .bold{
+  color:#FFFFFF;
+  font-size: 16px;
+  font-weight:normal;
+}
+
+.home-batdan .visual-injustice{
+  width: 240px;
+  height: 55px;
+  background: url("i/bg-visual-injustice.png") repeat scroll 0px 0px transparent;
+  position: absolute;
+  color: #fed746;
+  padding-top: 8px;
+  font-size: 24px;
+  padding-left: 20px;
+  letter-spacing: 1px;
+  margin-left:200px;
+  margin-top:18px;
+  clear:both;
+  float:left;
+}
+
+.home-batdan .identity{
+  clear:both;
+  color:#FFFFFF;
+  font-size: 16px;
+  margin-top: 95px;
+  width:370px;
+}
+
+.home-batdan .right{
+  float:right;
+  margin-top:-400px;
+  width:500px;
+}
+
+.home-batdan .right .dan-image{
+  background: url('i/img-dan.png') no-repeat top left;
+  display:block;
+  height:606px;
+  width:521px;
+}
+
+/* ABOUT */
+
+.onepage.about,
+.onepage.skills{
+  clear:both;
+}
+
+.onepage.about .text{
+  width:58%;
+  float:left;
+  padding-right:17px;
+}
+.onepage.about .timer,
+.onepage.about .icons{
+  width:40%;
+  float:left;
+}
+
+.onepage.about div.icons{
+  padding-top:20px;
+}
+
+.onepage .home-batdan .text article h2,
+.onepage .home-dan .text article h2,
+.onepage.about .text article h2,
+.onepage.contact article h2{
+  display:none;
+}
+
+.onepage.about .main-text.col-1,
+.onepage.about .main-text.col-2{
+  width:46%;
+}
+
+.onepage.about .main-text.col-1{
+  float:left;
+}
+
+.onepage.about .main-text.col-2{
+  float:right;
+}
+
+.onepage.about .about-us.guess-what{
+  clear:both;
+  padding-top:30px;
+}
+
+.onepage.about .about-us.guess-what p{
+  font-size:16px;
+}
+
+.onepage.about .icons .views-row{
+  float:left;
+  height:120px;
+  width:110px;
+}
+
+.onepage.about .icons .views-row .views-field-title{
+  height:71px;
+  width:70px;
+  margin:0 auto;
+}
+
+.onepage.about .icons .views-row span.icon-1{
+  background:url('i/icon-1.png') no-repeat top center;
+  height:75px;
+  width:60px;
+}
+
+.onepage.about .icons .views-row span.icon-1:hover{
+  background:url('i/icon-1.png') no-repeat center -77px;
+}
+
+.onepage.about .icons .views-row-2 .views-field-title{
+  margin:0;
+}
+
+.onepage.about .icons .views-row span.icon-2{
+  background:url('i/icon-2.png') no-repeat top center;
+  height:55px;
+  width:118px;
+}
+
+.onepage.about .icons .views-row span.icon-2:hover{
+  background:url('i/icon-2.png') no-repeat center -58px;
+}
+
+.onepage.about .icons .views-row span.icon-3{
+  background:url('i/icon-3.png') no-repeat top center;
+  height:66px;
+  width:65px;
+}
+
+.onepage.about .icons .views-row span.icon-3:hover{
+  background:url('i/icon-3.png') no-repeat center -69px;
+}
+
+.onepage.about .icons .views-row span.icon-4{
+  background:url('i/icon-4.png') no-repeat top center;
+  height:71px;
+  width:67px;
+}
+
+.onepage.about .icons .views-row span.icon-4:hover{
+  background:url('i/icon-4.png') no-repeat center -74px;
+}
+
+.onepage.about .icons .views-row span.icon-5{
+  background:url('i/icon-5.png') no-repeat top center;
+  height:71px;
+  width:60px;
+}
+
+.onepage.about .icons .views-row span.icon-5:hover{
+  background:url('i/icon-5.png') no-repeat center -74px;
+}
+
+.onepage.about .icons .views-row span.icon-6{
+  background:url('i/icon-6.png') no-repeat top center;
+  height:65px;
+  width:65px;
+}
+
+.onepage.about .icons .views-row span.icon-6:hover{
+  background:url('i/icon-6.png') no-repeat center -68px;
+}
+
+.onepage.about .icons .views-row .views-field-body{
+  display:none;
+  color:white;
+  background:black;
+  margin-top:10px;
+  text-align: center;
+}
+
+/* TIMER */
+
+.hasCountdown{
+  background:none;
+  border:none;
+  font-family:'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  width:285px;
+  text-align: center;
+}
+
+.hasCountdown .year{
+  float:left;
+  width:47px;
+}
+
+.hasCountdown .year-figure{
+  font-size:82px;
+  float:left;
+  line-height:56px;
+  padding-top:15px;
+}
+
+.hasCountdown .year-text{
+  font-size:15px;
+  margin-top:-10px;
+}
+
+.hasCountdown .months{
+  font-size:38px;
+  padding-top:3px;
+  line-height:44px;
+}
+
+.hasCountdown .weeks,
+.hasCountdown .days,
+.hasCountdown .hours{
+  float: left;
+  width:38px;
+  padding:0 10px;
+}
+
+.hasCountdown .mins{
+  width:38px;
+  float:left;
+  padding:0 10px;
+}
+
+.hasCountdown .week-figure,
+.hasCountdown .day-figure,
+.hasCountdown .hours-figure{
+  float: left;
+  font-size:35px;
+  line-height:30px;
+  padding-left:10px;
+}
+
+.hasCountdown .min-figure{
+  float:left;
+  font-size:35px;
+  line-height:30px;
+  padding-left:10px;
+}
+
+.hasCountdown .week-text,
+.hasCountdown .day-text,
+.hasCountdown .hours-text,
+.hasCountdown .min-text{
+  font-size:10px;
+}
+
+.hasCountdown .secs{
+  background-color:#000000;
+  margin-top:50px;
+  padding:3px;
+}
+
+.hasCountdown .sec-figure,
+.hasCountdown .sec-text{
+  color:yellow;
+}
+
+.hasCountdown .career-text{
+  color:#ffffff;
+}
+
+.onepage.about .timeline{
+  clear:both;
+  height:120px;
+}
+
+.onepage.about .timeline .timeline-text{
+  float:left;
+  clear:both;
+  width:80px;
+  margin-top: 60px;
+  position: absolute;
+  text-align: center;
+}
+
+.onepage.about .timeline .timeline-text .year-text{
+  font-weight: bold;
+}
+
+.onepage.about .timeline .timeline-bg{
+  background:url("i/img-timeline.png");
+  width:940px;
+  height:79px;
+  position: relative;
+}
+
+.onepage.about .timeline .image.dot{
+  width:5px;
+  height:5px;
+  position: absolute;
+  margin-top:7px;
+}
+
+.onepage.about .timeline .timeline-text.dot{
+  display:none;
+}
+
+.onepage.about .timeline .image.event-0{
+  float:left;
+  width:70px;
+  height:65px;
+  margin-left:5px;
+  margin-top:11px;
+}
+
+.onepage.about .timeline .image.event-100{
+  float:right;
+  width:70px;
+  height:65px;
+  margin-right:4px;
+  margin-top:11px;
+}
+
+.onepage.about .timeline .timeline-text.event-100{
+  float:right;
+  position:relative;
+  margin-top:5px;
+}
+
+/* SKILLS */
+.onepage.skills .view-programs{
+  margin-top:75px;
+}
+
+.onepage.skills .views-row{
+  width:20%;
+  float:left;
+}
+
+.onepage.skills .views-row .views-field-title{
+  text-align: center;
+  color:#cccccc;
+}
+
+.onepage.skills .views-row div.programs{
+  height:118px;
+  width:159px;
+  display:block;
+}
+
+
+/* PORTFOLIO */
+
+.onepage.portfolio #portfolio-thumbanil{
+  height:177px;
+  float:left;
+}
+
+.onepage.portfolio #portfolio-hidden{
+  display:none;
+}
