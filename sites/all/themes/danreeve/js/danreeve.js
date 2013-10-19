@@ -8,7 +8,7 @@ var danreeve = {
     jQuery(".onepage .home-batdan .text .button-keep .button-text").live("hover", danreeve.spriteBatDanBtnOff);
     jQuery(".onepage .home-batdan .text .button-keep .button-text").live("click", danreeve.spriteBatDanBtnClickOff);
     jQuery(".onepage.about .timeline .image").live('mouseover mouseout', danreeve.timelineImageHover);
-
+    jQuery(".menu a").live('click', danreeve.pageLink);
 
 	},
 
@@ -117,51 +117,64 @@ var danreeve = {
   },
 
   timelineImageHover: function(e){
-  $img = jQuery(this).children();
-  $source = $img.attr("class");
-  if (e.type == 'mouseover') {
-    $year = jQuery(this).attr("class");
-    $year = $year.split("year-");
-    $year = $year[1];
-    $newimg = "sites/all/themes/danreeve/css/i/" + $year + ".png";
-    $img = $img.attr("src");
-    $img = $img.split("sites");
-    $child = jQuery(this).children();
-    $child.attr("src", $newimg);
-    if(jQuery(this).hasClass("event-0")){
-      iMarginTop = 4;
-    } else if(jQuery(this).hasClass("event-100")) {
-      iMarginTop = 3;
-    } else {
-      iMarginTop = 0;
-      iMarginLeft = parseFloat(jQuery(this).css("margin-left"));
-      iMarginLeftHover = iMarginLeft - 10;
-      jQuery(this).css("margin-left", iMarginLeftHover);
-      jQuery(this).css("margin-top", "7px");
-      jQuery('.timeline-text.year-'+$year).css("margin-left", iMarginLeftHover - 16);
-    }
-    jQuery(this).css("margin-top", iMarginTop+"px");
-    jQuery('.timeline-text.year-'+$year).show();
-  } else {
-    // do something on mouseout
-    $child = jQuery(this).children();
-    $child.attr("src", $source);
-    if(jQuery(this).hasClass("dot")){
-      jQuery(this).css("margin-top", "7px");
-      jQuery(this).css("margin-left", iMarginLeft);
+    $img = jQuery(this).children();
+    $source = $img.attr("class");
+    if (e.type == 'mouseover') {
       $year = jQuery(this).attr("class");
       $year = $year.split("year-");
       $year = $year[1];
-      jQuery('.timeline-text.year-'+$year).hide();
-      jQuery
+      $newimg = "sites/all/themes/danreeve/css/i/" + $year + ".png";
+      $img = $img.attr("src");
+      $img = $img.split("sites");
+      $child = jQuery(this).children();
+      $child.attr("src", $newimg);
+      if(jQuery(this).hasClass("event-0")){
+        iMarginTop = 4;
+      } else if(jQuery(this).hasClass("event-100")) {
+        iMarginTop = 3;
+      } else {
+        iMarginTop = 0;
+        iMarginLeft = parseFloat(jQuery(this).css("margin-left"));
+        iMarginLeftHover = iMarginLeft - 10;
+        jQuery(this).css("margin-left", iMarginLeftHover);
+        jQuery(this).css("margin-top", "7px");
+        jQuery('.timeline-text.year-'+$year).css("margin-left", iMarginLeftHover - 16);
+      }
+      jQuery(this).css("margin-top", iMarginTop+"px");
+      jQuery('.timeline-text.year-'+$year).show();
     } else {
-      jQuery(this).css("margin-top", "11px");
+      // do something on mouseout
+      $child = jQuery(this).children();
+      $child.attr("src", $source);
+      if(jQuery(this).hasClass("dot")){
+        jQuery(this).css("margin-top", "7px");
+        jQuery(this).css("margin-left", iMarginLeft);
+        $year = jQuery(this).attr("class");
+        $year = $year.split("year-");
+        $year = $year[1];
+        jQuery('.timeline-text.year-'+$year).hide();
+        jQuery
+      } else {
+        jQuery(this).css("margin-top", "11px");
+      }
     }
-  }
+  },
+
+  pageLink: function(e, node){
+    that = jQuery(this);
+    sLink = jQuery(that).attr("id");
+    $link = sLink.split("-");
+    sLink = $link[1];
+    offset = jQuery("a[name='"+sLink+"']").offset();
+    jQuery('body').animate({
+      'scrollTop': offset.top
+    }, 2000);
+    if((jQuery(this).hasClass("dan-logo")) == false){
+      return false;
+    }
 
 
   }
-
 }
 
 jQuery(function() {
