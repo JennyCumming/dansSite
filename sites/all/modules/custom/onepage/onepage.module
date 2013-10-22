@@ -19,7 +19,7 @@ function onepage_menu(){
 
 function onepage_menu_page(){
   $page = "";
-
+//test
   $home_node = node_load(18);
   $home = node_view($home_node, "full");
 
