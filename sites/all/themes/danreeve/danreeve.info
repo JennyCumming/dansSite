@@ -7,46 +7,46 @@ base theme = omega
 
 ; REQUIRED CORE REGIONS
 
-regions[page_top] = Page Top
+;regions[page_top] = Page Top
 regions[page_bottom] = Page Bottom
 regions[content] = Content
 
 ; ADDITIONAL REGIONS
 
-regions[user_first] = User Bar First
-regions[user_second] = User Bar Second
+;regions[user_first] = User Bar First
+;regions[user_second] = User Bar Second
 
 regions[branding] = Branding
 regions[menu] = Menu
 
-regions[sidebar_first] = Sidebar First
-regions[sidebar_second] = Sidebar Second
+;regions[sidebar_first] = Sidebar First
+;regions[sidebar_second] = Sidebar Second
 
 regions[header_first] = Header First
 regions[header_second] = Header Second
 
-regions[preface_first] = Preface First
-regions[preface_second] = Preface Second
-regions[preface_third] = Preface Third
+;regions[preface_first] = Preface First
+;regions[preface_second] = Preface Second
+;regions[preface_third] = Preface Third
 
-regions[postscript_first] = Postscript First
-regions[postscript_second] = Postscript Second
-regions[postscript_third] = Postscript Third
-regions[postscript_fourth] = Postscript Fourth
+;regions[postscript_first] = Postscript First
+;regions[postscript_second] = Postscript Second
+;regions[postscript_third] = Postscript Third
+;regions[postscript_fourth] = Postscript Fourth
 
-regions[footer_first] = Footer First
-regions[footer_second] = Footer Second
+;regions[footer_first] = Footer First
+;regions[footer_second] = Footer Second
 
 ; ZONES
 
-zones[user] = User
-zones[branding] = Branding
+;zones[user] = User
+;zones[branding] = Branding
 zones[menu] = Menu
 zones[header] = Header
-zones[preface] = Preface
+;zones[preface] = Preface
 zones[content] = Content
-zones[postscript] = Postscript
-zones[footer] = Footer
+;zones[postscript] = Postscript
+;zones[footer] = Footer
 
 ; OPTIONAL STYLESHEETS
 
