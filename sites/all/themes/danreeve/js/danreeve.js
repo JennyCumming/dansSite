@@ -9,7 +9,6 @@ var danreeve = {
     jQuery(".onepage .home-batdan .text .button-keep .button-text").live("click", danreeve.spriteBatDanBtnClickOff);
     jQuery(".onepage.about .timeline .image").live('mouseover mouseout', danreeve.timelineImageHover);
     jQuery(".menu a").live('click', danreeve.pageLink);
-
 	},
 
   showIconText: function(e, node){

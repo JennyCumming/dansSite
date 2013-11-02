@@ -1,5 +1,22 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+/* ====================
+    Layout
+   ==================== */
+
+.container-24 .grid-20 {
+  width: 940px!important;
+}
+
+.container-24 .suffix-2 {
+  padding-right: 120px!important;
+}
+
+.container-24 .prefix-2 {
+  padding-left: 120px!important;
+}
+
 /* ====================
     HTML tags
    ==================== */
@@ -20,14 +37,8 @@ h3 {
 
 h4 {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-}
-
-a:link,
-a:active,
-a:visited {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 p {
@@ -53,21 +64,27 @@ p a {
 .skills h2,
 .portfolio h2,
 .contact h2{
-  font-size: 30px;
-  font-weight: bold;
-  border-bottom: 1px solid black;
+  font-family: 'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 54px;
+  border-bottom: 1px solid #CECECE;
+
   margin-bottom:30px;
 }
 
 
 /* HEADER MENU */
-.block-main-menu{
+.region {
+  min-height: 0;
+}
+
+.zone-menu-wrapper {
   background:url('i/bg-slice.jpg') repeat-x top left;
   height:88px;
   text-align:center;
 }
 
 .block-main-menu ul.menu{
+  background: url('i/icon-arrow.png') scroll no-repeat center bottom;
   width:59%;
   margin: 0 auto 0 auto;
   padding-top:8px;
@@ -75,15 +92,16 @@ p a {
 
 .block-main-menu .menu li.leaf{
   color:#000000;
-  width:110px;
+  min-width:110px;
   float:left;
   padding:30px 0 30px 0;
   list-style-type: none;
   list-style-image: none;
 }
 
-.block-main-menu .menu li a{
+.block-main-menu .menu li a {
   color:#FFFFFF;
+  font-size: 16px;
   text-decoration: none;
 }
 
@@ -95,9 +113,9 @@ p a {
 .block-main-menu .menu li a.dan-logo{
   background: url('i/img-logo.png') no-repeat left top;
   display:block;
+  height: 120px;
   text-indent: -9999px;
-  width: 189px;
-  height: 121px;
+  width: 220px;
 }
 
 /* ONE PAGE SETTINGS */
@@ -115,7 +133,7 @@ text-align: center;
 .onepage .home-dan{
 width: 960px;         /* width of each container*/
 height: 960px;          /* height of each container*/
-position: absolute;       /* instructure each container to obey the position absolutely*/
+/*position: absolute;*/       /* instructure each container to obey the position absolutely*/
 float: left;          /* float all the container so that they overlapped each other*/
 /*left: 27%;     */       /* align them to the center of the screen */
 z-index: -1;
@@ -129,84 +147,90 @@ z-index: -1;
   background: url('i/bg-texture.jpg') fixed repeat;
 }
 
-.onepage .home-dan .left .welcome-text .big-text{
-  font-size: 130px;
-font-weight: bold;
-width: 145px;
-float: left;
-letter-spacing: -11px;
+.onepage .home-dan .left .welcome-text {
+  overflow: visible;
+  position: relative;
 }
 
-.onepage .home-dan .left .welcome-text .medium-text{
-  font-size: 37px;
-font-weight: bold;
-padding-top: 40px;
-padding-left: 196px;
-width: 272px;
-display: block;
+.onepage .home-dan .left .welcome-text .big-text {
+  font-family: 'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 165px;
+  letter-spacing: -6px;
+  width: 145px;
 }
 
-.onepage .home-dan .left .welcome-text .smaller-text{
-  font-size: 31px;
-font-weight: bold;
-padding-left: 199px;
-margin-top: -11px;
-width: 369px;
-display: block;
+.onepage .home-dan .left .welcome-text .medium-text {
+  font-family: 'Fugaz One','Open Sans',Arial,Helvetica,sans-serif;
+  font-size: 48px;
+  letter-spacing: -2px;
+  position: absolute;
+  right: -85px;
+  top: 39px;
 }
 
-.onepage .home-dan .left .welcome-text .smaller-text .second{
-  width: 230px;
-display: block;
-float: left;
+.onepage .home-dan .left .welcome-text .second.smaller-text {
+  position: absolute;
+  right: -85px;
+  top: 76px;
 }
 
-.onepage .home-dan .left .welcome-text .smaller-text .third{
-font-size: 72px;
-float: left;
-display: block;
-width: 45px;
-margin-top: -16px;
+.onepage .home-dan .left .welcome-text .smaller-text {
+  font-family: 'Fugaz One','Open Sans',Arial,Helvetica,sans-serif;
 }
 
-.onepage .home-dan .left .welcome-text .smaller-text .fourth{
-width: 147px;
-margin-top: 33px;
-position: absolute;
-margin-left: -273px;
+.onepage .home-dan .left .welcome-text .smaller-text .web {
+  font-size: 38px;
+  letter-spacing: -2px;
+  position: absolute;
+  right: -25px;
+  top: 93px;
 }
 
-.onepage .home-dan .left .body.smaller-text,
-.onepage .home-dan .left .identity{
-  clear:both;
-  width:330px;
-  font-size:12px;
+.onepage .home-dan .left .welcome-text .smaller-text .ampersand {
+  font-size: 100px;
+  position: absolute;
+  right: -90px;
+  top: 70px;
 }
 
-.onepage .home-dan .left .body.smaller-text .bold,
-.onepage .home-dan .left .identity .bold{
-  font-weight:bold;
+.onepage .home-dan .left .welcome-text .smaller-text .illustrator {
+  font-size: 42px;
+  letter-spacing: -2px;
+  position: absolute;
+  right: -20px;
+  top: 130px;
 }
 
-.onepage .home-dan .left .identity,
+.onepage .home-dan .left .welcome-text .body {
+  color: #333333;
+  font-size: 18px;
+  margin-top: 5px;
+  text-align: left;
+  width: 576px;
+}
+
+.onepage .home-dan .left .welcome-text .identity {
+  color: #333333;
+  font-size: 18px;
+  padding-top: 26px;
+  text-align: left;
+}
+
 .onepage .home-dan .left .button{
-  padding-top:20px;
-}
-
-.onepage .home-dan .left .button{
-  background: url('i/img-arrow.png') no-repeat right 20px;
-display: block;
-width: 315px;
-height: 103px;
+  background: url("i/img-arrow.png") no-repeat scroll right 24px rgba(0, 0, 0, 0);
+  display: block;
+  height: 122px;
+  padding-top: 90px;
+  width: 346px;
 }
 
 .onepage .home-dan .left .button .button-text{
-background: url("i/btn-reveal-batdan.png") no-repeat top left;
-display: block;
-text-indent: -9999px;
-width: 249px;
-height: 47px;
-margin-top: 70px;
+  background: url("i/btn-reveal-batdan.png") no-repeat top left;
+  display: block;
+  text-indent: -9999px;
+  width: 249px;
+  height: 47px;
+  
 }
 
 .onepage .home-dan .right{
@@ -335,8 +359,7 @@ background-color: black;
 }
 .onepage.about .timer,
 .onepage.about .icons{
-  width:40%;
-  float:left;
+  float:right;
 }
 
 .onepage.about div.icons{
@@ -462,9 +485,14 @@ background-color: black;
   background:none;
   border:none;
   font-family:'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
+  position: relative;
   text-transform: uppercase;
-  width:285px;
+  width:325px;
   text-align: center;
+}
+
+.hasCountdown .label { 
+
 }
 
 .hasCountdown .year{
@@ -473,27 +501,32 @@ background-color: black;
 }
 
 .hasCountdown .year-figure{
-  font-size:82px;
-  float:left;
-  line-height:56px;
-  padding-top:15px;
+  font-size:102px;
+  line-height: 102px;
 }
 
 .hasCountdown .year-text{
-  font-size:15px;
-  margin-top:-10px;
+  font-size: 18px;
+  left: 0;
+  margin-top: -10px;
+  position: absolute;
+  top: 94px;
 }
 
 .hasCountdown .months{
-  font-size:38px;
-  padding-top:3px;
-  line-height:44px;
+  font-size: 47px;
+  letter-spacing: -2px;
+  padding-top: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: -8px;
+  width: 267px;
 }
 
 .hasCountdown .weeks,
 .hasCountdown .days,
 .hasCountdown .hours{
-  float: left;
   width:38px;
   padding:0 10px;
 }
@@ -631,4 +664,26 @@ background-color: black;
 
 .onepage.portfolio #portfolio-hidden{
   display:none;
+}
+
+
+#node-page-18 h2,
+#node-page-26 h2 {
+  display: none;
+}
+
+
+
+
+
+
+
+/*  ===========
+      Temp hides - until dev is complete
+    =========== */
+
+.onepage .home-dan .left .welcome-text .body,
+.onepage .home-dan .left .welcome-text .identity,
+.onepage .home-dan .left .button {
+  display: none;
 }
