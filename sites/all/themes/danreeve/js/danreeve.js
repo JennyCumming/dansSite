@@ -1,7 +1,7 @@
 var danreeve = {
 
 	init: function(){
-    jQuery(".onepage.about .icons .views-row .views-field-title").live("hover", danreeve.showIconText);
+    jQuery(".onepage.about .icons-container .views-row .views-field-title").live("hover", danreeve.showIconText);
     jQuery(".onepage.skills .view-programs .views-row").live("hover", danreeve.spriteProgramIcon);
     jQuery(".onepage .home-dan .text .left .button .button-text").live("hover", danreeve.spriteBatDanBtnOn);
     jQuery(".onepage .home-dan .text .left .button .button-text").live("click", danreeve.spriteBatDanBtnClickOn);
@@ -136,7 +136,7 @@ var danreeve = {
         iMarginLeft = parseFloat(jQuery(this).css("margin-left"));
         iMarginLeftHover = iMarginLeft - 10;
         jQuery(this).css("margin-left", iMarginLeftHover);
-        jQuery(this).css("margin-top", "7px");
+        jQuery(this).css("margin-top", "6px");
         jQuery('.timeline-text.year-'+$year).css("margin-left", iMarginLeftHover - 16);
       }
       jQuery(this).css("margin-top", iMarginTop+"px");
@@ -146,7 +146,7 @@ var danreeve = {
       $child = jQuery(this).children();
       $child.attr("src", $source);
       if(jQuery(this).hasClass("dot")){
-        jQuery(this).css("margin-top", "7px");
+        jQuery(this).css("margin-top", "6px");
         jQuery(this).css("margin-left", iMarginLeft);
         $year = jQuery(this).attr("class");
         $year = $year.split("year-");
@@ -154,7 +154,7 @@ var danreeve = {
         jQuery('.timeline-text.year-'+$year).hide();
         jQuery
       } else {
-        jQuery(this).css("margin-top", "11px");
+        jQuery(this).attr("style", "");
       }
     }
   },

@@ -1,0 +1,32 @@
+
+.batdan-noodle {
+	float:right;
+	width:50%;
+	text-align:right;
+}
+
+.batdan-noodle .indesign,
+.batdan-noodle .photoshop,
+.batdan-noodle .office-programs,
+.batdan-noodle .clumsyness,
+.batdan-noodle .creativity,
+.batdan-noodle .omni,
+.batdan-noodle .geek,
+.batdan-noodle .mac-and-pc,
+.batdan-noodle .flash,
+.batdan-noodle .illustrator {
+	fill: #FFFFFF;
+}
+
+.batdan-noodle .brain-segment:hover {cursor: pointer;}
+
+.batdan-noodle .indesign:hover			{fill:#C6368B;}
+.batdan-noodle .photoshop:hover			{fill:#4B72B8;}
+.batdan-noodle .office-programs:hover	{fill:#C6368B;}
+.batdan-noodle .clumsyness:hover		{fill:#EAD6AC;}
+.batdan-noodle .creativity:hover		{fill:#0BAC4B;}
+.batdan-noodle .omni:hover				{fill:#33BFC4;}
+.batdan-noodle .geek:hover				{fill:#737374;}
+.batdan-noodle .mac-and-pc:hover		{fill:#B4B3B4;}
+.batdan-noodle .flash:hover				{fill:#D61F38;}
+.batdan-noodle .illustrator:hover		{fill:#F9A12F;}

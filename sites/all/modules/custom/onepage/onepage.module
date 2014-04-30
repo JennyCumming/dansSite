@@ -41,7 +41,11 @@ function onepage_menu_page(){
   $skills_view = views_get_view("programs", "block_1");
   $skills_view = $skills_view->execute_display("block_1");
   $skills = "<h2><a name='skills'>" . $skills_view['subject'] . "</a></h2>";
-  $skills .= "<h3>IT'S NOT JUST ABOUT THE PROGRAMS</h3>";
+
+  $skills_brain = module_invoke('block', 'block_view', 5);
+  $skills .= '<div class="skills-wrapper clearfix"><div class="skill-o-meter"></div><div class="batdan-noodle">'.$skills_brain['content'].'</div></div>';
+
+  $skills .= "<h3><span class='title-bg'>IT'S NOT JUST ABOUT THE PROGRAMS</span></h3>";
   $skills .= $skills_view['content'];
 
   $portfolio_view = views_get_view("portfolio", "block_1");
@@ -52,18 +56,18 @@ function onepage_menu_page(){
   $contact_node = node_load(7);
   $contact = node_view($contact_node, "full");
 
-  $page .= "<div class='onepage home-main'>" . drupal_render($batdan);
+  $page .= "<div id='home' class='onepage home-main'>" . drupal_render($batdan);
   $page .= drupal_render($home). "</div>";
 
-  $page .= "<div class='onepage about'><h2><a name='about'>ABOUT</a></h2><div class='text'>" . drupal_render($about). "</div>";
+  $page .= "<div id='about' class='onepage about'><h2><a name='about'>ABOUT</a></h2><div class='text'>" . drupal_render($about). "</div>";
   $page .= "<div class='timer'>" . $timer . "</div>";
-  $page .= "<div class='icons'>" . $about_us_icons . "</div>";
+  $page .= "<div class='icons-container'>" . $about_us_icons . "</div>";
   $page .= "<div class='timeline'>" . $timeline . "</div>";
   $page .= "</div>";
-  $page .= "<div class='onepage skills'>";
+  $page .= "<div id='skills' class='onepage skills'>";
   $page .= "<div class='onepage skills programs'>" . $skills . "</div></div>";
-  $page .= "<div class='onepage portfolio'>" . $portfolio . "</div>";
-  $page .= "<div class='onepage contact'><h2><a name='contact'>CONTACT</a></h2><div class='contact-left'>" . drupal_render($contact) . "</div><div class='contact-right'><ul class='contact-links'><li><a href='https://www.facebook.com/DannyReevze?fref=ts' alt='Find me on Facebook' class='contact-facebook'>F</a></li><li><a href='https://twitter.com/The_Bat_Dan' alt='Find me on Twitter' class='contact-twitter'>T</a></li><li><a href='uk.linkedin.com/pub/daniel-reeve/33/750/668' alt='Find me on LinkedIn' class='contact-linked'>L</a></li><li><a href='mailto:dreeve@me.com' alt='Email me' class='contact-mail'>E</a></li></ul></div></div>";
+  $page .= "<div id='portfolio' class='onepage portfolio'>" . $portfolio . "</div>";
+  $page .= "<div id='contact' class='onepage contact'><h2><a name='contact'>CONTACT</a></h2><div class='contact-left'>" . drupal_render($contact) . "</div><div class='contact-right'><ul class='contact-links'><li><a href='https://www.facebook.com/DannyReevze?fref=ts' alt='Find me on Facebook' class='contact-facebook'>F</a></li><li><a href='https://twitter.com/The_Bat_Dan' alt='Find me on Twitter' class='contact-twitter'>T</a></li><li><a href='uk.linkedin.com/pub/daniel-reeve/33/750/668' alt='Find me on LinkedIn' class='contact-linked'>L</a></li><li><a href='mailto:dreeve@me.com' alt='Email me' class='contact-mail'>E</a></li></ul></div></div>";
 
   return $page;
 }

@@ -23,6 +23,7 @@
 
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  padding-bottom: 90px;
 }
 
 h1,
@@ -33,6 +34,11 @@ h3 {
   font-weight: normal;
   letter-spacing: -1px;
   margin-bottom: 0;
+}
+
+h3 span.title-bg {
+  background: url("i/bg-texture.jpg") repeat fixed 0 0 rgba(0, 0, 0, 0);
+  padding: 0 10px;
 }
 
 h4 {
@@ -67,10 +73,14 @@ p a {
   font-family: 'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 54px;
   border-bottom: 1px solid #CECECE;
-
   margin-bottom:30px;
+  margin-top: 70px;
 }
 
+.skills h3 {
+  font-family: 'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
 
 /* HEADER MENU */
 .region {
@@ -357,9 +367,12 @@ background-color: black;
   float:left;
   padding-right:17px;
 }
-.onepage.about .timer,
-.onepage.about .icons{
+.onepage.about .timer {
   float:right;
+  width:325px;
+}
+.onepage.about .icons{
+  width:330px;
 }
 
 .onepage.about div.icons{
@@ -395,83 +408,95 @@ background-color: black;
   font-size:16px;
 }
 
-.onepage.about .icons .views-row{
+.onepage.about .icons-container {
+  float: right;
+  margin-top:30px;
+  width: 330px;
+}
+
+.onepage.about .icons-container .views-row {
   float:left;
   height:120px;
   width:110px;
 }
 
-.onepage.about .icons .views-row .views-field-title{
+.onepage.about .icons-container .views-row .views-field-title{
   height:71px;
   width:70px;
   margin:0 auto;
 }
 
-.onepage.about .icons .views-row span.icon-1{
+.onepage.about .icons-container .views-row span.icon-1 {
   background:url('i/icon-1.png') no-repeat top center;
+  display:block;
   height:75px;
   width:60px;
 }
 
-.onepage.about .icons .views-row span.icon-1:hover{
+.onepage.about .icons-container .views-row span.icon-1:hover{
   background:url('i/icon-1.png') no-repeat center -77px;
 }
 
-.onepage.about .icons .views-row-2 .views-field-title{
+.onepage.about .icons-container .views-row-2 .views-field-title{
   margin:0;
 }
 
-.onepage.about .icons .views-row span.icon-2{
+.onepage.about .icons-container .views-row span.icon-2{
   background:url('i/icon-2.png') no-repeat top center;
+  display:block;
   height:55px;
   width:118px;
 }
 
-.onepage.about .icons .views-row span.icon-2:hover{
+.onepage.about .icons-container .views-row span.icon-2:hover{
   background:url('i/icon-2.png') no-repeat center -58px;
 }
 
-.onepage.about .icons .views-row span.icon-3{
+.onepage.about .icons-container .views-row span.icon-3{
   background:url('i/icon-3.png') no-repeat top center;
+  display:block;
   height:66px;
   width:65px;
 }
 
-.onepage.about .icons .views-row span.icon-3:hover{
+.onepage.about .icons-container .views-row span.icon-3:hover{
   background:url('i/icon-3.png') no-repeat center -69px;
 }
 
-.onepage.about .icons .views-row span.icon-4{
+.onepage.about .icons-container .views-row span.icon-4{
   background:url('i/icon-4.png') no-repeat top center;
+  display:block;
   height:71px;
   width:67px;
 }
 
-.onepage.about .icons .views-row span.icon-4:hover{
+.onepage.about .icons-container .views-row span.icon-4:hover{
   background:url('i/icon-4.png') no-repeat center -74px;
 }
 
-.onepage.about .icons .views-row span.icon-5{
+.onepage.about .icons-container .views-row span.icon-5{
   background:url('i/icon-5.png') no-repeat top center;
+  display:block;
   height:71px;
   width:60px;
 }
 
-.onepage.about .icons .views-row span.icon-5:hover{
+.onepage.about .icons-container .views-row span.icon-5:hover{
   background:url('i/icon-5.png') no-repeat center -74px;
 }
 
-.onepage.about .icons .views-row span.icon-6{
+.onepage.about .icons-container .views-row span.icon-6{
   background:url('i/icon-6.png') no-repeat top center;
+  display:block;
   height:65px;
   width:65px;
 }
 
-.onepage.about .icons .views-row span.icon-6:hover{
+.onepage.about .icons-container .views-row span.icon-6:hover{
   background:url('i/icon-6.png') no-repeat center -68px;
 }
 
-.onepage.about .icons .views-row .views-field-body{
+.onepage.about .icons-container .views-row .views-field-body{
   display:none;
   color:white;
   background:black;
@@ -482,13 +507,14 @@ background-color: black;
 /* TIMER */
 
 .hasCountdown{
-  background:none;
-  border:none;
-  font-family:'Fugaz One', 'Open Sans', Arial, Helvetica, sans-serif;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: medium none;
+  font-family: 'Fugaz One','Open Sans',Arial,Helvetica,sans-serif;
+  height: 140px;
   position: relative;
-  text-transform: uppercase;
-  width:325px;
   text-align: center;
+  text-transform: uppercase;
+  width: 325px;
 }
 
 .hasCountdown .label { 
@@ -496,8 +522,10 @@ background-color: black;
 }
 
 .hasCountdown .year{
-  float:left;
-  width:47px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 47px;
 }
 
 .hasCountdown .year-figure{
@@ -524,18 +552,49 @@ background-color: black;
   width: 267px;
 }
 
-.hasCountdown .weeks,
-.hasCountdown .days,
-.hasCountdown .hours{
-  width:38px;
-  padding:0 10px;
+.hasCountdown .weeks {
+  left: 66px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 58px;
+  width: 62px;
+}
+.hasCountdown .days {
+  left: 135px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 58px;
+  width: 68px;
+}
+.hasCountdown .hours {
+  left: 212px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 58px;
+  width: 62px;
+}
+.hasCountdown .mins {
+  float: left;
+  left: 274px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 58px;
+  width: 62px;
 }
 
-.hasCountdown .mins{
-  width:38px;
-  float:left;
-  padding:0 10px;
+.hasCountdown .weeks span,
+.hasCountdown .days span,
+.hasCountdown .hours span,
+.hasCountdown .mins span {
+  display: block;
+  text-align: center;
+  width: 100%;
 }
+
 
 .hasCountdown .week-figure,
 .hasCountdown .day-figure,
@@ -543,27 +602,35 @@ background-color: black;
   float: left;
   font-size:35px;
   line-height:30px;
-  padding-left:10px;
 }
 
 .hasCountdown .min-figure{
   float:left;
   font-size:35px;
   line-height:30px;
-  padding-left:10px;
 }
 
-.hasCountdown .week-text,
-.hasCountdown .day-text,
-.hasCountdown .hours-text,
+.hasCountdown .week-text {
+  font-size:14px;
+}
+.hasCountdown .day-text {
+  font-size:14px;
+}
+.hasCountdown .hours-text {
+  font-size:14px;
+}
 .hasCountdown .min-text{
-  font-size:10px;
+  font-size:14px;
 }
 
 .hasCountdown .secs{
-  background-color:#000000;
-  margin-top:50px;
-  padding:3px;
+  background-color: #000000;
+  bottom: 0;
+  clear: both;
+  font-size: 16px;
+  padding: 3px;
+  position: absolute;
+  width: 319px;
 }
 
 .hasCountdown .sec-figure,
@@ -604,7 +671,7 @@ background-color: black;
   width:5px;
   height:5px;
   position: absolute;
-  margin-top:7px;
+  margin-top:6px;
 }
 
 .onepage.about .timeline .timeline-text.dot{
@@ -624,18 +691,25 @@ background-color: black;
   width:70px;
   height:65px;
   margin-right:4px;
-  margin-top:11px;
+  margin-top:6px;
 }
 
 .onepage.about .timeline .timeline-text.event-100{
   float:right;
   position:relative;
-  margin-top:5px;
+  margin-top: 10px;
 }
 
 /* SKILLS */
+
+.onepage.skills h3 {
+  background: url("i/img-title-breaker.png") repeat-x scroll left center transparent;
+  font-size: 26px;
+  text-align: center;
+}
+
 .onepage.skills .view-programs{
-  margin-top:75px;
+  margin-top: 15px;
 }
 
 .onepage.skills .views-row{
@@ -648,17 +722,90 @@ background-color: black;
   color:#cccccc;
 }
 
-.onepage.skills .views-row div.programs{
-  height:118px;
-  width:159px;
+.onepage.skills .views-row div.programs {
+  height: 90px;
+  margin: 50px 0 25px 0;
   display:block;
 }
 
+.onepage.skills .views-row div.sprite-logo-design {
+  background: url("i/sprite-logo-design.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-logo-design:hover {
+  background-position: center -98px;
+}
+
+.onepage.skills .views-row div.sprite-wireframing {
+  background: url("i/sprite-wireframing.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-wireframing:hover {
+  background-position: center -95px;
+}
+
+.onepage.skills .views-row div.sprite-web-design {
+  background: url("i/sprite-web-design.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-web-design:hover {
+  background-position: center -92px;
+}
+
+.onepage.skills .views-row div.sprite-sketching {
+  background: url("i/sprite-sketching.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-sketching:hover {
+  background-position: center -98px;
+}
+
+.onepage.skills .views-row div.sprite-portal {
+  background: url("i/sprite-portal.png") no-repeat scroll center top transparent;
+  height: 92px;
+  margin: 50px 0 23px;
+}
+.onepage.skills .views-row div.sprite-portal:hover {
+  background-position: center -92px;
+}
+
+.onepage.skills .views-row div.sprite-facebook-apps {
+  background: url("i/sprite-facebook-apps.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-facebook-apps:hover {
+  background-position: center -93px;
+}
+
+.onepage.skills .views-row div.sprite-print-design {
+  background: url("i/sprite-print-design.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-print-design:hover {
+  background-position: center -97px;
+}
+
+.onepage.skills .views-row div.sprite-lion-taming {
+  background: url("i/sprite-lion-taming.png") no-repeat scroll center top transparent;
+  height: 110px;
+  margin: 50px 0 5px 0;
+}
+.onepage.skills .views-row div.sprite-lion-taming:hover {
+  background-position: center -117px;
+}
+
+.onepage.skills .views-row div.sprite-ux {
+  background: url("i/sprite-ux.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-ux:hover {
+  background-position: center -96px;
+}
+
+.onepage.skills .views-row div.sprite-illustration {
+  background: url("i/sprite-illustration.png") no-repeat scroll center top transparent;
+}
+.onepage.skills .views-row div.sprite-illustration:hover {
+  background-position: center -101px
+}
 
 /* PORTFOLIO */
 
 .onepage.portfolio #portfolio-thumbanil{
-  height:177px;
+/*  height:177px;*/
   float:left;
 }
 
@@ -672,10 +819,105 @@ background-color: black;
   display: none;
 }
 
+/* CONTACT */
 
+/* Contact left */
 
+.onepage.contact .contact-left {
+  float: left;
+  width: 50%;
+}
 
+.onepage.contact .contact-left .webform-client-form .form-item {
+  margin: 0;
+}
 
+.onepage.contact .contact-left .field-name-body p {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 40px;
+  width: 350px;
+}
+
+.onepage.contact .contact-left .webform-client-form label {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.onepage.contact .contact-left .webform-client-form input {
+    border: 1px solid #CDCDCD;
+    height: 42px;
+    margin-bottom: 24px;
+    width: 360px;
+}
+
+.onepage.contact .contact-left .webform-client-form .form-textarea {
+  border: 1px solid #CDCDCD;
+  height: 150px;
+  margin-bottom: 40px;
+  width: 458px;
+}
+
+.onepage.contact .contact-left .webform-client-form .grippie {
+  display: none;
+}
+
+.onepage.contact .contact-left .webform-client-form .form-actions {
+  margin: 0;
+}
+
+.onepage.contact .contact-left .webform-client-form .form-submit {
+  background: url("i/btn-send.png") no-repeat scroll left top transparent;
+  border: 0 none;
+  border-radius: 0;
+  display: block;
+  height: 45px;
+  margin: 0;
+  text-indent: -9999px;
+  width: 230px;
+}
+
+.onepage.contact .contact-left .webform-client-form .form-submit:hover {
+  background-position: left -53px;
+}
+
+/* Contact right */
+
+.onepage.contact .contact-right {
+  float: right;
+  width: 50%;
+}
+
+.onepage.contact ul.contact-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.onepage.contact ul.contact-links li {
+  display: inline;
+}
+
+.onepage.contact ul.contact-links li a {
+  background: url("i/sprite-social.png") no-repeat scroll left top transparent;
+  display: inline-block;
+  height: 76px;
+  margin: 0 14px 0 14px;
+  text-align: center;
+  text-indent: -9999px;
+  width: 76px;
+}
+
+.onepage.contact ul.contact-links li a.contact-facebook {}
+.onepage.contact ul.contact-links li a.contact-twitter {background-position: -103px top;}
+.onepage.contact ul.contact-links li a.contact-linked {background-position: -205px top;}
+.onepage.contact ul.contact-links li a.contact-mail {background-position: -308px top;}
+
+.onepage.contact ul.contact-links li a.contact-facebook:hover {background-position: left -84px;}
+.onepage.contact ul.contact-links li a.contact-twitter:hover {background-position: -103px -84px;}
+.onepage.contact ul.contact-links li a.contact-linked:hover {background-position: -205px -84px;}
+.onepage.contact ul.contact-links li a.contact-mail:hover {background-position: -308px -84px;}
 
 
 /*  ===========

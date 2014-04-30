@@ -54,6 +54,10 @@ css[global.css][name] = Your custom global styles
 css[global.css][description] = This file holds all the globally active custom CSS of your theme.
 css[global.css][options][weight] = 10
 
+css[danreeve-brain.css][name] = Your custom global styles
+css[danreeve-brain.css][description] = This contains the styles for the brain of Dan
+css[danreeve-brain.css][options][weight] = 10
+
 libraries[danReeve][name] = Dan Reeve Portfolio
 libraries[danReeve][description] = Dan Reeves Javascript
 libraries[danReeve][js][0][file] = danReeve.js
